@@ -3,13 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ashok Chakra in CSS3 - apnerve labs</title>
+  <!--
+    The main feature of this is semantic markup. No extra markup has been used. 
+    
+    As per the markup, Chakra is an ordered list of 24 spokes.
+  -->
   <style type="text/css">
+    body {
+      margin: auto;
+      width: 1000px;
+    }
     #chakra {
       border: 60px solid #008;
       width: 880px;
       height: 880px;
       border-radius: 50%;
-      margin: auto;
+      margin: 0;
+      padding: 0;
+      list-style: none;
       position: relative;
     }
     
@@ -30,8 +41,10 @@
       position: absolute;
       left: 424px;
       top: 0;
-      -moz-transform-origin: 16px 437px;
-      -webkit-transform-origin: 16px 437px;
+      margin: 0;
+      padding: 0;
+      -moz-transform-origin: 16px 440px;
+      -webkit-transform-origin: 16px 440px;
     }
     .spoke:after {
       content: "";
@@ -204,103 +217,104 @@
       </style>
 </head>
 <body>
-	<div id="chakra">
-        <div class="spoke spoke-1">
+	<ol id="chakra">
+        <li class="spoke spoke-1">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-2">
+    </li>
+        <li class="spoke spoke-2">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-3">
+    </li>
+        <li class="spoke spoke-3">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-4">
+    </li>
+        <li class="spoke spoke-4">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-5">
+    </li>
+        <li class="spoke spoke-5">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-6">
+    </li>
+        <li class="spoke spoke-6">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-7">
+    </li>
+        <li class="spoke spoke-7">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-8">
+    </li>
+        <li class="spoke spoke-8">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-9">
+    </li>
+        <li class="spoke spoke-9">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-10">
+    </li>
+        <li class="spoke spoke-10">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-11">
+    </li>
+        <li class="spoke spoke-11">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-12">
+    </li>
+        <li class="spoke spoke-12">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-13">
+    </li>
+        <li class="spoke spoke-13">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-14">
+    </li>
+        <li class="spoke spoke-14">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-15">
+    </li>
+        <li class="spoke spoke-15">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-16">
+    </li>
+        <li class="spoke spoke-16">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-17">
+    </li>
+        <li class="spoke spoke-17">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-18">
+    </li>
+        <li class="spoke spoke-18">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-19">
+    </li>
+        <li class="spoke spoke-19">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-20">
+    </li>
+        <li class="spoke spoke-20">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-21">
+    </li>
+        <li class="spoke spoke-21">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-22">
+    </li>
+        <li class="spoke spoke-22">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-23">
+    </li>
+        <li class="spoke spoke-23">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-        <div class="spoke spoke-24">
+    </li>
+        <li class="spoke spoke-24">
       <div class="spoke-a"></div>
       <div class="spoke-b"></div>
-    </div>
-      </div>
+    </li>
+      </ol>
+  <p></p>
 </body>
 </html>
