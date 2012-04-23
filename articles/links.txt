@@ -1,0 +1,22 @@
+http://stackoverflow.com/questions/7122492/why-script-src-min-js-script-but-link-rel-stylesheet-href-min-why-no
+http://stackoverflow.com/questions/3395359/difference-between-src-and-href
+
+
+href for 
+
+<style href="">
+<style src="">
+
+<link href="style.css">
+
+<style>
+@import "style.css";
+</style>
+
+In search for true separation
+
+All stylesheets and behaviours should be added using the <link> tag
+<style> and <script> should be deprecated
+
+
+---
