@@ -1,0 +1,131 @@
+.fks-module.fk-replacement-promo {
+  border-width: 0;
+}
+
+.fk-mproduct .fks-module {
+  border: 1px solid #CCCCCC;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.fk-box-replacement {
+  background: none repeat scroll 0 0 #E9E9B9;
+  border: 3px solid #DBDBC3;
+  text-align: left;
+}
+
+.fk-box-replacement .bdy {
+  padding: 10px 7px 4px;
+}
+
+.fk-box-replacement .left-unit {
+  font-family: Arial;
+  margin-top: -9px;
+  padding-left: 3px;
+  position: relative;
+}
+
+.unit {
+  float: left;
+}
+
+.fk-box-replacement .right-unit {
+  color: #666666;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+  padding-left: 10px;
+}
+
+.lastUnit {
+  float: none;
+  width: auto;
+}
+
+.line, .lastUnit {
+  overflow: hidden;
+}
+
+.fk-box-replacement .text1 {
+  color: #FFFFFF;
+  font-size: 43px;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.fk-box-replacement .text2 {
+  color: #A5A56A;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: -8px;
+  text-align: center;
+}
+
+.fk-box-replacement .know-more-link {
+  margin-top: -5px;
+}
+
+.fk-box-replacement .know-more-link a {
+  font-size: 11px !important;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.fk-emi-promo {
+  background: none repeat scroll 0 0 #ECF1F7;
+  border: 2px solid #B5C0D0;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.fks-module.fk-emi-promo {
+  border: 2px solid #B4C0D0;
+}
+
+.fk-emi-promo .cell1,
+.fk-emi-promo .cell2 {
+  float: left;
+}
+
+.fk-emi-promo .cell1 {
+  margin-right: 10px;
+  width: 55px;
+}
+
+.fk-emi-promo .cell2 {
+  font-size: 11px;
+}
+
+.fk-emi-promo .cell1 .text1,
+.fk-emi-promo .cell1 .text2 {
+  color: #B4C0D0;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+.fk-emi-promo .cell1 .text1 {
+  font-family: Arial;
+  font-size: 40px;
+  line-height: 38px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.fk-emi-promo .cell1 .text2 {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.fk-emi-promo .hdr {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.fk-emi-promo .lnk {
+  font-size: 11px;
+  text-align: left;
+}
+
+.fk-emi-promo .lnk a {
+  text-decoration: none;
+}

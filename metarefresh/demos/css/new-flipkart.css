@@ -1,0 +1,78 @@
+/* Not ideal. Just for demo */
+.fks-module {
+  border: 2px solid #ccc;
+  font-family: arial;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.media-object {
+  overflow: hidden;
+}
+
+.media {
+  float: left;
+  margin-right: 10px;
+}
+
+.media-bd > p {
+  font-size: 11px;
+}
+
+.media-text {
+  display: block;
+  width: 55px;
+  line-height: 1;
+  text-align: center;
+}
+
+.primary-text {
+  color: #fff;
+  font: bold 43px/34px arial, sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.dark-text {
+  color: #B4C0D0;
+}
+
+.secondary-text {
+  color: #A5A56A;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.small-text { 
+  color: #B4C0D0;
+  font-size: 11px;
+}
+
+h2,
+.h2 {
+  color: #666;
+  font: bold 20px/18px tahoma, verdana, arial;
+  text-transform: capitalize;
+}
+h3,
+.h3 {
+  color: #333;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.more-link {
+  text-decoration: none;
+}
+
+.mod-a {
+  background-color: #E9E9B9;
+  border-width: 3px;
+  border-color: #DBDBC3;
+}
+
+.mod-b {
+  background-color: #ECF1F7;
+  border-color: #B4C0D0;
+}

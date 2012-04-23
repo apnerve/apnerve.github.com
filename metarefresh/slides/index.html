@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>MetaRefresh 2012 | Scalable Frontend Architecture</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+    <link href="css/slides.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/prettify.js"></script>
+</head>
+<body onload="prettyPrint();">
+
+
+<div id="impress" class="impress-not-supported">
+  
+  <section class="step slide" data-x="-1000" data-y="0">
+    <p>Scalable (<span class="apnerve">CSS</span>)Frontend Architecture</p>
+  </section>
+
+  <section class="step slide" data-x="0" data-y="0" data-rotate="90">
+    <h1>hello, I'm <span class="apnerve">Praveen</span></h1>
+    <p>A.K.A. @<span class="apnerve">apnerve</span></p>
+  </section>
+  
+  <section class="step" data-x="0" data-y="100" data-scale="0.01">
+    <pre class="prettyprint">
+      var apnerve = {
+        fullName: "Praveen Kumar",
+        title: "Web Developer",
+        currentLocation: "Bangalore, IN",
+        employment: {
+            company: "Kuliza",
+            position: "Web Developer"
+        }
+    </pre>
+  </section>
+  
+  <section class="step slide" data-x="1000" data-y="-1000">
+    <p>We all follow web standards. Right?</p>
+  </section>
+  
+    <section class="step slide" data-x="1000" data-y="0" data-rotate="90">
+      <h2>What's wrong with CSS?</h2>
+    	<ul>
+    		<li>CSS grows with site size</li>
+    		<li>CSS best practices encourage what would otherwise be bad programming: </li>
+    		<li>CSS is often contextually unreadable.</li>
+    		<li>CSS encourages overrides</li>
+    		<li>CSS encourages bad coupling and distant dependencies</li>
+    	</ul>
+    </section>
+    
+    <section class="step slide" data-x="1000" data-y="0" data-scale="0.001">
+      <pre class="prettyprint" content-editable>
+    &lt;style&gt;
+    #sidebar .mod h3 { /* some rules */ }
+    #sidebar .mod p { /* some rules */ }
+    &lt;/style&gt;
+    ---
+    &lt;div id="sidebar"&gt;
+      &lt;div class="mod"&gt;
+        &lt;h3&gt;heading&lt;/h3&gt;
+        &lt;p&gt;content&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- true separation? --&gt;
+      </pre>
+    </section>
+    
+    <div id="oocss">
+    	<section class="step slide" data-x="2300" data-y="1000">
+        <h2>OOCSS</h2>
+    	  <p>(<span class="apnerve">OOCSS</span>) Object Oriented CSS is a methodology for organising and extending <span class="apnerve">CSS</span>.</p>
+    	</section>
+    	
+    	<section class="step slide" data-x="2300" data-y="990" data-scale="0.01">
+    	  <h2>Principles</h2>
+    	  <ul>
+    	  	<li>Separate structure and skin. </li>
+    	  	<li>Separate container and content.</li>
+    	  </ul>
+        <p class="small">can be achieved if we use "class" selectors alone</p>
+    	</section>
+      
+      <section class="step slide" data-x="2300" data-y="990" data-scale="0.0001">
+        <pre class="prettyprint">
+      class="structure-class skin-class"
+      class="base-class extend-class"
+        </pre>
+      </section>  
+      <section class="step slide" data-x="2303" data-y="988" data-scale="0.00001">
+        <pre class="prettyprint">
+      &lt;style&gt;
+      .mod .hd { /* some rules */ }
+      .mod .bd { /* some rules */ }
+      &lt;/style&gt;
+      ---
+      &lt;div id="sidebar"&gt;
+        &lt;div class="mod"&gt;
+          &lt;h3 class="hd"&gt;heading&lt;/h3&gt;
+          &lt;p class="bd"&gt;content&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+        </pre>
+      </section>
+      
+      <section class="step slide" data-x="2303" data-y="988.1" data-scale="0.00001" >
+        <pre class="prettyprint">
+      &lt;style&gt;
+      .mod .hd { /* some rules */ }
+      .mod .bd { /* some rules */ }
+      &lt;/style&gt;
+      ---
+      &lt;div id="sidebar"&gt;
+        &lt;div class="mod"&gt;
+          &lt;h2 class="hd"&gt;heading&lt;/h3&gt;
+          &lt;p class="bd"&gt;content&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+        </pre>
+      </section>  	
+      
+    	<section class="step slide" data-x="2303" data-y="988" data-scale="0.001" data-rotate="-90">
+    	  <h2>Double-stranded heading hierarchy</h2>
+    	  <p>practice of defining a class every time you define a heading in CSS.</p>
+    	</section>
+      
+      <section class="step slide" data-x="2303.2" data-y="988" data-scale="0.00001" >
+        <pre class="prettyprint">
+      &lt;style&gt;
+      h1, .h1 { /* some rules */ }
+      h2, .h2 { /* some rules */ }
+      ...
+      h6, .h6 { /* some rules */ }
+      &lt;/style&gt;
+        </pre>
+      </section> 
+      
+      
+    	<section class="step slide" data-x="2303" data-y="990" data-scale="0.001" data-rotate="-90">
+    	  <h2>media Object</h2>
+    	  <p>The media object is an image to the left, with descriptive content to the right</p>
+    	</section>
+    	<section class="step slide" data-x="2303" data-y="992" data-scale="0.001" data-rotate="-90">
+    	  <p>
+    	  	<img src="img/media-object.jpg" alt="" width="800" />
+    	  </p>
+    	</section>
+      
+    </div>
+    
+    <div id="smacss">
+      <section class="step slide" data-x="3000" data-y="3000">
+        <h2>SMACSS</h2>
+        <ul>
+          <li>Similar philosophy</li>
+          <li>Based on categorising the CSS rules</li>
+        <ul>
+      </section>
+      
+      <section class="step slide" data-x="3000" data-y="4000">
+        <h2>There are five types of categories:</h2>
+        <ul>
+        	<li>Base</li>
+          <li>Layout</li>
+          <li>Module</li>
+          <li>State</li>
+          <li>Theme</li>
+        </ul>
+      </section>
+    </div>
+    <div id="bem">
+      <section class="step slide" data-x="3000" data-y="2000">
+        <h2>BEM</h2>
+        <ul>
+          <li>Similar philosophy</li>
+          <li>3 types of components. Block, Element and Modifier</li>
+        </ul>
+      </section>
+    </div>
+    
+    <div id="conclusion">
+      <section class="step slide" data-x="4000" data-x="3000">
+        <h2>Common things in all</h2>
+        <ul>
+        	<li>Think in terms of components. Identify reusable component.</li>
+          <li>Create re-usable components and mix-n-match them as per requirements</li>
+        	<li>element agnostic selectors</li>
+        	<li>context-free selectors</li>
+        </ul>
+        <p class="small">Goal: styles should less dependant on our structure.</p>
+      </section>
+      <section class="step slide" data-x="4000" data-y="1000">
+        <h2>Credits</h2>
+        <ul>
+        	<li>OOCSS - By Nicole Sullivan</li>
+          <li>SMACSS - By Jonathan Snook</li>
+        	<li>BEM - By Yandex</li>
+        </ul>
+      </section>
+    </div>
+  
+  <div id="overview" class="step" data-x="0" data-y="-2800" data-scale="10">
+    <p class="end">Questions?</p>
+  </div>
+  
+</div>
+
+<script src="js/impress.js"></script>
+  <script type="text/javascript">
+  impress().init();
+</script>
+
+</body>
+</html>
