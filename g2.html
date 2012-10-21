@@ -7,22 +7,28 @@
 		.conversation {
 			width: 616px;
 			margin: auto;
+			background: #999;
+			overflow: hidden;
 		}
 
 		.g2,
 		.c2 {
+			position: relative;
 			line-height: 1.5;
 			padding: 10px;
 			width: 420px;
-			margin: auto;
 			font: 13px/1.4 'lucida grande', tahoma, verdana, arial, sans-serif;
 			margin-top: 20px;
-			border: 1px solid #cfcfcf;
 			border-radius: 3px;
+			clear: both;
+		}
+		.c2 {
+			background-color: #f0f0f0;
+			margin-left: 94px;
 		}
 		.g2 {
-			background-color: #f9f9f9;
-			text-align: right;
+			background-color: #fff;
+			margin-left: 82px;
 		}
 
 		.c2:before,
@@ -46,6 +52,25 @@
 			float: right;
 			margin-right: -64px;
 			right: -34px;
+		}
+
+		.c2:after,
+		.g2:after {
+			content: "";
+			display: block;
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			position: absolute;
+			top: 10px;
+
+		}
+		.c2:after {
+			border-right: 10px solid #f0f0f0;
+			left: -10px;
+		}
+		.g2:after {
+			border-left: 10px solid #fff;
+			right: -10px;
 		}
 	</style>
 </head>
