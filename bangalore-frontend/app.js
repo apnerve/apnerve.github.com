@@ -1,11 +1,10 @@
-/* The code can be made better */
 $(document).ready(function() {
 	BF.init();
 });
 
 var BF = {
 	init: function() {
-		$.getJSON('http://localhost/members.json', function(data) {
+		$.getJSON('members.json', function(data) {
 			var a = data.data;
 			a.reverse();
 			for (var i = 0; i < a.length; i++) {
