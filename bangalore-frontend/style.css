@@ -50,7 +50,8 @@ p {
 }
 
 /* =links */
-a {
+a,
+a:visited {
   color: rgb(104,185,186);
 }
 
@@ -68,7 +69,6 @@ a {
 .post-title {
   font-size: 3em;
   line-height: 1;
-  margin-bottom: 3rem;
 }
 
 #members {
