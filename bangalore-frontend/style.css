@@ -1,11 +1,11 @@
 body {
-	background-color: #fdfdfd;
-	color: #333;
+  background-color: #fdfdfd;
+  color: #333;
 }
 
 .container {
-	padding:1em;
-    max-width: 450em;
+    padding:1em;
+    max-width: 45em;
     margin: auto;
 }
 
@@ -15,101 +15,101 @@ h3,
 h4,
 h5,
 h6 {
-	margin:0;
-	font-family: "Alice";
-	margin-bottom: 1.5rem;
+  margin:0;
+  font-family: "Alice";
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-	font-size: 2.5rem;
-	line-height: 1.2;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 h2 {
-	font-size: 1.5rem;
-	line-height: 1;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 h3,
 h4 {
-	font-size: 1rem;
-	line-height: 1.5;
-	text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-transform: uppercase;
 }
 h5,
 h6 {
-	font-size: 1rem;
-	line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 h6 {
 }
 
 p {
-	font-family: Merriweather;
-	font-size: 1rem;
-	line-height: 1.5;
-	margin-bottom: 1.5rem;
+  font-family: Merriweather;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 /* =links */
 a {
-	color: rgb(104,185,186);
+  color: rgb(104,185,186);
 }
 
 /* =layout */
 .hd {
 }
 .hd:before {
-	display: block;
-	content: "";
-	border-top: 10px solid rgb(252,110,90);
+  display: block;
+  content: "";
+  border-top: 10px solid rgb(252,110,90);
 }
 .bd {}
 .ft {}
 /* =post specific */
 .post-title {
-	font-size: 3em;
-	line-height: 1;
-	margin-bottom: 3rem;
+  font-size: 3em;
+  line-height: 1;
+  margin-bottom: 3rem;
 }
 
 #members {
-	padding: 0;
+  padding: 0;
 }
 #members:after {
-	clear:both;
-	content: "";
-	display: table;
+  clear:both;
+  content: "";
+  display: table;
 }
 #members > li {
-	list-style: none;
-	float: left;
-	width: 56px;
-	height: 56px;
+  list-style: none;
+  float: left;
+  width: 56px;
+  height: 56px;
 }
 #members a {
-	border-radius: 3px;
-	position: relative;
-	display: block;
-	margin:0;
+  border-radius: 3px;
+  position: relative;
+  display: block;
+  margin:0;
 }
 #members img {
-	opacity: 0.4;
-	border: 6px solid transparent;
+  opacity: 0.4;
+  border: 6px solid transparent;
 }
 #members a:hover:after {
-	content: attr(data-title);
-	font-family: Merriweather, serif;
-	color: #fff;
-	display: block;
-	position: absolute;
-	background: rgb(252,110,90);
-	width: auto;
-	padding: 6px 10px;
-	top:0;
-	left:56px;
-	white-space: nowrap;
-	z-index:9;
+  content: attr(data-title);
+  font-family: Merriweather, serif;
+  color: #fff;
+  display: block;
+  position: absolute;
+  background: rgb(252,110,90);
+  width: auto;
+  padding: 6px 10px;
+  top:0;
+  left:56px;
+  white-space: nowrap;
+  z-index:9;
 }
 #members a:hover img {
-	opacity: 1;
-	border-color: rgb(252,110,90);
+  opacity: 1;
+  border-color: rgb(252,110,90);
 }
