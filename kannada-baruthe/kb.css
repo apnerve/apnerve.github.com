@@ -1,104 +1,107 @@
-    body {
-      background: #f9f9f9;
-      color: rgb(87,17,54) ;
-      font-family:linden-hill,georgia,serif;
-      font-size: 16px;
-      margin: 0 0 24px;
-    }
-    .container {
-      max-width: 1140px;
-      margin: auto;
-    }
+  /*
+    Don't judge my coding skills by looking at this. This needs to be re-factored.
+  */
+
+  body {
+    background: #f9f9f9;
+    color: rgb(87,17,54) ;
+    font-family:linden-hill,georgia,serif;
+    font-size: 16px;
+    margin: 0 0 24px;
+  }
+  .container {
+    max-width: 1140px;
+    margin: auto;
+  }
 
 
 
-    h1 {
-      color: rgb(222,73,43);
-      letter-spacing: 2px;
-      font-size: 4em;
-      font-weight: normal;
-      line-height: 1;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid #f9f9f9;
-    }
-    tr:nth-child(odd){
-      background: #fff;
-    }
-    p,
-    th,
-    td {
-      padding: 10px;
-      font-size: 1.2em;
-      text-align: left;
-    }
-    th {
-      background-color: #e6e6e6; 
-    }
-    .play {
-      background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Loudspeaker.svg/11px-Loudspeaker.svg.png') no-repeat;
-      border: none;
-      color: #69c;
-      cursor: pointer;
-      font-size: 0;
-      height: 11px;
-      width: 11px;
-      vertical-align: middle;
-    }
-    .ft {
-      opacity: 0.3;
-      font-size: 0.75em;
-    }
-    .ft:hover {
-      opacity: 1;
-    }
+  h1 {
+    color: rgb(222,73,43);
+    letter-spacing: 2px;
+    font-size: 4em;
+    font-weight: normal;
+    line-height: 1;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  tr:nth-child(odd){
+    background: #fff;
+  }
+  p,
+  th,
+  td {
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: left;
+  }
+  th {
+    background-color: #e6e6e6; 
+  }
+  .play {
+    background: url('http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Loudspeaker.svg/11px-Loudspeaker.svg.png') no-repeat;
+    border: none;
+    color: #69c;
+    cursor: pointer;
+    font-size: 0;
+    height: 11px;
+    width: 11px;
+    vertical-align: middle;
+  }
+  .ft {
+    opacity: 0.3;
+    font-size: 0.75em;
+  }
+  .ft:hover {
+    opacity: 1;
+  }
 
-    /* =reset */
-    ul {
-      padding: 0;
-      list-style: none;
-    }
+  /* =reset */
+  ul {
+    padding: 0;
+    list-style: none;
+  }
 
-    /* =layout */
-    .wrap {
-      overflow: hidden;
-    }
-    .main,
-    .sidebar {
-      float: left;
-    }
-    .main {
-      width: 840px;
-      margin-left: 300px;
-    }
-    .sidebar {
-      width: 270px;
-      margin-right: 30px;
-      position: fixed;
-    }
+  /* =layout */
+  .wrap {
+    overflow: hidden;
+  }
+  .main,
+  .sidebar {
+    float: left;
+  }
+  .main {
+    width: 840px;
+    margin-left: 300px;
+  }
+  .sidebar {
+    width: 270px;
+    margin-right: 30px;
+    position: fixed;
+  }
 
-    .nav-stacked a {
-      display: block;
-      font-size: 20px;
-    }
+  .nav-stacked a {
+    display: block;
+    font-size: 20px;
+  }
 
-    /* =elements */
-    h1,h2,h3,h4,h5,h6,p {
-      font-weight: normal;
-      margin-top: 0;
-    }
-    a,a:visited {
-      color: #69c;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #369;
-      text-decoration: underline;
-    }
+  /* =elements */
+  h1,h2,h3,h4,h5,h6,p {
+    font-weight: normal;
+    margin-top: 0;
+  }
+  a,a:visited {
+    color: #69c;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #369;
+    text-decoration: underline;
+  }
 
-    .main > p {
-      max-width: 33em;
-      line-height: 1.5;
-    }
+  .main > p {
+    max-width: 33em;
+    line-height: 1.5;
+  }

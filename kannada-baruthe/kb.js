@@ -1,6 +1,7 @@
+    // Don't judge me by this code.
+
     var YQL = {};
     YQL.categories = "http://query.yahooapis.com/v1/public/yql?q=select%20content%2Chref%20from%20html%20where%20url%3D%22http%3A%2F%2Fkannadabaruthe.com%2F%22%20and%20xpath%3D%22%2F%2F*%5B%40id%3D'categories'%5D%22&format=json&callback=?";
-    YQL.cat_id = 45;
 
     $(document).ready(function() {
       KB.init(YQL);
@@ -47,7 +48,7 @@
         for(i = 2; i < resultArray.length - 2;) {
           var kannada_text = resultArray[i].p;
           var english_text = resultArray[i + 1].p.content;
-          $('#translation').append('<tr><td class="knd">' + kannada_text +'</td><td class="eng">' + english_text +'</td><!--<td><button class="play">play</button></td>--></tr>')
+          $('#translation').append('<tr><td class="knd">' + kannada_text +'</td><td class="eng">' + english_text +'</td></tr>');
           i = i + 2;
         }
       }
