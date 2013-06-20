@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="//cdn.jsdelivr.net/jquery/2.0.2/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/mediaelement/2.12.0/mediaelement-and-player.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/mediaelement/2.12.0/mediaelementplayer.min.css" />
+  <style>
+    body {
+      font: 12px arial, sans-serif;
+      width: 810px;
+      margin: auto;
+    }
+    #player-wrapper {
+      height: 474px;
+    }
+    #playlist {
+      height: 360px;
+      overflow-y: scroll;
+    }
+    #playlist ul {
+      margin: 0;
+    }
+    #playlist li {
+      background: #666;
+      border-bottom: 1px solid #777;
+      color: #fff;
+      list-style: none;
+      cursor: pointer;
+    }
+    #playlist li:hover {
+      background: #999;
+    }
+    .media:after {
+      clear: both;
+    }
+    .media-img {
+      float: left;
+      margin-right: 10px;
+    }
+    .media-bd {
+      padding: 6px 6px 0;
+      height: 84px;
+      overflow-y: hidden;
+    }
+    .media-bd h3 {
+      margin-top: 0;
+      font-size: 13px;
+    }
+    .media-bd p {
+      line-height: 1.4;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <div id="player-wrapper">
+    <video width="810" height="474" id="player">
+      <source type="video/youtube" src=""></source>
+    </video>
+  </div>
+  <div id="playlist"></div>
+  <script>
+  var showVideos = function(data) {
+    console.log(data);
+    var playlist = $('#playlist').append('<ul>');
+
+    $.each(data.feed.entry, function(index, data) {
+      $(playlist).append('<li class="media" data-src="'+ data.content.src +'"><img class="media-img" src="'+ data.media$group.media$thumbnail[0].url +'" /><div class="media-bd"><h3>' + data.title.$t + '</h3><p>'+ data.media$group.media$description.$t +'</p></div></li>');
+      if(index == 0) {
+        $('#player source').attr('src', data.content.src);
+        $('#player').mediaelementplayer();
+      }
+    });
+
+    $('#playlist li').click(function() {
+      var playerWrapper = $('#player-wrapper');
+      playerWrapper.empty();
+      playerWrapper.append('<video id="player" width="810" height="474"><source type="video/youtube" src="'+ $(this).data('src') +'"></source></video>');
+      var player = new MediaElementPlayer('#player', {
+        success: function(mediaElement, domObject) {
+          if (mediaElement.pluginType == 'flash') {
+            mediaElement.addEventListener('canplay', function() {
+                // Player is ready
+                mediaElement.play();
+              }, false);
+          }
+        }
+      });
+    });
+  }
+  </script>
+  <script src="https://gdata.youtube.com/feeds/api/users/nathanielschool/uploads?v=2&alt=json-in-script&callback=showVideos"></script>
+</body>
+</html>
