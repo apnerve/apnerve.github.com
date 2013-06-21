@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  By a fan of Alicia
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Old Wives' Tales - by Alicia Souja</title>
+  <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+  <style>
+  body {
+    background: #fafafa;
+  }
+  a {
+    color: #028482;
+  }
+  #hd {
+    background: #fff;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font: normal normal 30px/36px "Cookie",georgia;
+    text-align: center;
+  }
+  #hd:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 84px;
+    width: 100%;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.44) 56%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(56%,rgba(255,255,255,0.44)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* W3C */
+  }
+  #fb-album {
+    width: 960px;
+    margin: 60px auto;
+  }
+  #fb-album ul {
+    marign: 0;
+    padding: 0;
+  }
+  #fb-album li {
+    list-style: none;
+  }
+  #fb-album a {
+    display: block;
+    width: 580px;
+    border: 1px solid #fff;
+    border-width: 1px 0 0 1px;
+    box-shadow: 2px 2px 2px #ccc;
+    border-radius: 6px;
+    margin: 0 auto 24px;
+    padding: 16px;
+  }
+  #fb-album a:hover {
+    border-width: 0 1px 1px 0;
+    box-shadow: inset 2px 2px 6px #ccc;
+  }
+  #load {
+    position: fixed;
+  }
+  </style>
+</head>
+<body>
+  <h1 id="hd">Old Wives' Tales - by <a href="http://www.facebook.com/the.aliciasouza" target="_blank">Alicia Souja</a></h1>
+  <div id="fb-album">
+  </div>
+
+  <script src="//cdn.jsdelivr.net/jquery/2.0.2/jquery.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    var albumURL = 'http://www.facebook.com/media/set/?set=a.224742877583940.55750.222801407778087&type=3';
+    var temp = albumURL.split('.');
+    var albumGraphURL = "http://graph.facebook.com/" + temp[3] + "/photos?fields=images,name,id,link&callback=?";
+
+    $('#fb-album').append('<ul id="photolist"></ul>');
+    var photoList = $("#photolist");
+    
+    var showImages = function(Obj) {
+      $.getJSON(Obj, function(json){
+        $.each(json.data, function(i, d) {
+          if(json.data[i].name && json.data[i].name.indexOf('Old Wives') != -1 && json.data[i].id != 523110081080550) {
+            photoList.append('<li><a href="'+ json.data[i].link +'" target="_blank"><img width="580" src="'+ json.data[i].images[1].source +'" id="' + json.data[i].id + '" /></a></li>');
+          }
+        });
+        showImages(json.paging.next);
+      }); 
+    }
+
+    showImages(albumGraphURL); // init
+  });
+  </script>
+</body>
+</html>
