@@ -1,0 +1,83 @@
+  body {
+    background: #fafafa;
+    margin: 0 10px;
+  }
+  a {
+    color: #028482;
+  }
+  #hd {
+    background: #fff;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font: normal normal 30px/36px "Cookie",georgia;
+    text-align: center;
+  }
+  #hd:after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 84px;
+    width: 100%;
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0.44) 56%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(56%,rgba(255,255,255,0.44)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0.44) 56%,rgba(255,255,255,0) 100%); /* W3C */
+  }
+  #fb-album {
+    margin: 40px auto;
+  }
+  #fb-album ul {
+    marign: 0;
+    padding: 0;
+  }
+  #fb-album li {
+    list-style: none;
+  }
+  #fb-album a {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    border-width: 1px 0 0 1px;
+    -webkit-box-shadow: 1px 1px 6px #ccc;
+       -moz-box-shadow: 1px 1px 6px #ccc;
+         -o-box-shadow: 1px 1px 6px #ccc;
+            box-shadow: 1px 1px 6px #ccc;
+    border-radius: 6px;
+    margin: 0 auto 24px;
+    padding: 16px;
+  }
+  #fb-album a:hover {
+    border-width: 0 1px 1px 0;
+    -webkit-box-shadow: inset 1px 1px 6px #ccc;
+       -moz-box-shadow: inset 1px 1px 6px #ccc;
+         -o-box-shadow: inset 1px 1px 6px #ccc;
+            box-shadow: inset 1px 1px 6px #ccc;
+  }
+  #fb-album img {
+    max-width: 100%;
+  }
+  @media only screen and (min-width: 320px) {
+    #fb-album a {
+      width: 300px;
+    }
+    #hd {
+      font-size: 24px;
+    }
+  }
+  @media only screen and (min-width: 480px) {
+    #fb-album a {
+      width: 460px;
+    }
+    #hd {
+      font-size: 30px;
+    }
+  }
+  @media only screen and (min-width: 600px) {
+    #fb-album a {
+      width: 580px;
+    }
+  }
