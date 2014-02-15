@@ -8,6 +8,9 @@ $size:600px;
 $color:#c30;
 $bgcolor: #fff;
 
+body {
+	background-color: $bgcolor;
+}
 .logo {
 	font: bold normal $size/2 Raleway;
 	display: block;

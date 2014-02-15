@@ -3,6 +3,9 @@
   display: block;
   position: absolute; }
 
+body {
+  background-color: white; }
+
 .logo {
   font: bold normal 300px Raleway;
   display: block;
