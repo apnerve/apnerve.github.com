@@ -1,0 +1,64 @@
+%pseudo {
+	content: "";
+	display: block;
+	position: absolute;
+}
+
+$size:100px;
+$color:#c30;
+$bgcolor: #fff;
+
+.logo {
+	font: bold normal $size/2 Raleway;
+	display: block;
+	width: $size;
+	height: $size;
+	font-size: (100/400) * $size;
+	position: relative;
+
+
+	// the big circle
+	&:before {
+		@extend %pseudo;
+		width: $size;
+		height: $size;
+		background: $color;
+		border-radius: 50%;
+		left: 0;
+		top: 0;
+	}
+
+	// the rectangle to chop unnecessary stuff
+	&:after {
+		@extend %pseudo;
+		width: $size * 0.5;
+		height: $size * 0.6;
+		background: $bgcolor;
+		right: 0;
+		bottom: 0;
+	}
+
+	> b {
+		// the smaller circle
+		&:before {
+			@extend %pseudo;
+			width: $size * 0.65;
+			height: $size * 0.65;
+			background: $bgcolor;
+			border-radius: 50%;
+			left: (70/400)*$size;
+			top: (70/400)*$size;
+		}
+
+
+		// the arrow		
+		&:after {
+			@extend %pseudo;
+			border: (0.175 * $size * 1) solid $color;
+			border-left-color: transparent;
+			border-top-color: transparent;
+			right: 0;
+			top: (30/400) * $size;
+		}
+	}
+}

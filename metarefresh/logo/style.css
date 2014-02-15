@@ -1,0 +1,38 @@
+.logo:before, .logo:after, .logo > b:before, .logo > b:after {
+  content: "";
+  display: block;
+  position: absolute; }
+
+.logo {
+  font: bold normal 50px Raleway;
+  display: block;
+  width: 100px;
+  height: 100px;
+  font-size: 25px;
+  position: relative; }
+  .logo:before {
+    width: 100px;
+    height: 100px;
+    background: #cc3300;
+    border-radius: 50%;
+    left: 0;
+    top: 0; }
+  .logo:after {
+    width: 50px;
+    height: 60px;
+    background: white;
+    right: 0;
+    bottom: 0; }
+  .logo > b:before {
+    width: 65px;
+    height: 65px;
+    background: white;
+    border-radius: 50%;
+    left: 17.5px;
+    top: 17.5px; }
+  .logo > b:after {
+    border: 17.5px solid #cc3300;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    right: 0;
+    top: 7.5px; }
