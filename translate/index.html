@@ -24,21 +24,27 @@
 			background: #69c;
 			border: none;
 			cursor: pointer;
+			padding: 0 6px;
+			text-decoration: none;
+			line-height: 1.6;
+			color: #fff;
+		}
+		#iframe {
+			display: none;
 		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<textarea id="text">Hello! This is a simple text to speech converter using google translate in the background.</textarea>
-		<button id="submit" onclick="speak();">speak</button>
-		<audio id="player" autoplay></audio>
+		<p><a id="submit" onclick="speak();" href="http://translate.google.com/translate_tts?ie=UTF-8&q=chatur&tl=en" target="player">speak</a></p>
+		<iframe id="iframe" name="player"></iframe>
 	</div>
 	<script>
 		var speak = function() {
-			var player = document.getElementById("player");
-			var text = document.getElementById("text");
-			text = text.value;
-			player.src = "http://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "&tl=en";
+			var text = document.getElementById("text").value;
+			var link = document.getElementById('submit');
+			link.href = "http://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "&tl=en";
 		}
 	</script>
 </body>
