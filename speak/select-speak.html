@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>select speak</title>
+	<style>
+	#iframe {
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p><button id="submit" onclick="speak();" rel="noreferrer" target="player">speak</button></p>
+		<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live.
+
+</p>
+		<iframe id="iframe" name="player" rel="noreferrer"></iframe>
+	</div>
+	<script>
+		var speak = function() {
+			var text = document.getSelection().toString();
+			console.log(text);
+			var link = document.getElementById('iframe');
+			link.src = "http://translate.google.com/translate_tts?ie=UTF-8&q=" + text + "&tl=en";
+		}
+	</script>
+</body>
+</html>
