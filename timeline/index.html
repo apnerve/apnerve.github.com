@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>timeline</title>
+	<style>
+	body {
+    width: 33em;
+    margin: 24px auto;
+}
+
+.timeline{
+    margin: 0;
+    padding: 0;
+    border-left: 1px dotted rgba(255,0,0,0.3);
+    list-style: none;
+    padding-left: 30px;
+}
+.timeline time {
+    font-family: "Open Sans", arial, sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 30px;
+}
+.timeline li:before,
+.timeline li:after {
+    content:"";
+    background-color:#D2D2D2;
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    position: absolute;
+    left: -50px;
+    border:2px solid transparent;
+}
+.timeline li:after {
+    top: 0;
+    left:-38px;
+    background-color: rgba(255,0,0,0.3);
+    border: 2px solid #fff;
+}
+
+.timeline li {
+    margin-bottom: 36px;
+    position: relative;
+    border-bottom: 1px solid #efefef;
+}
+.timeline p {
+    font: 1em/1.5 georgia, serif;
+    margin: 24px 0;
+}
+
+	</style>
+</head>
+<body>
+	<ol class="timeline">
+    <li>
+        <time>Month</time>                                    
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo architecto velit a mollitia numquam placeat rem dolorum nisi delectus laboriosam vero expedita tempore minima ratione maiores hic quibusdam officia voluptatibus!</p>
+    </li>
+
+    <li>
+        <time>Month</time>                                    
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo architecto velit a mollitia numquam placeat rem dolorum nisi delectus laboriosam vero expedita tempore minima ratione maiores hic quibusdam officia voluptatibus!</p>
+    </li>
+
+    <li>
+        <time>Month</time>                                    
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo architecto velit a mollitia numquam placeat rem dolorum nisi delectus laboriosam vero expedita tempore minima ratione maiores hic quibusdam officia voluptatibus!</p>
+    </li>
+
+    <li>
+        <time>Month</time>                                    
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo architecto velit a mollitia numquam placeat rem dolorum nisi delectus laboriosam vero expedita tempore minima ratione maiores hic quibusdam officia voluptatibus!</p>
+    </li>
+</ol>
+</body>
+</html>
