@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- badly written. Don't judge :p -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>fabricJS</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet'>
+  <style>
+    body {
+      background: #000;
+      font-family: "Open Sans", arial;
+      color: #333;
+      margin: 0;
+    }
+    .container {
+      background: #efefef;
+      overflow: hidden;
+    }
+    .col {
+      float: left;
+    }
+      .col--main {
+        width: 1207px;
+        border-right: 1px solid #dcdcdc;
+        margin-right: 24px;
+      }
+      .col--aside {
+        width: 429px;
+      }
+        .col--aside img {
+          width: 32px;
+          border:1px solid #dcdcdc;
+          cursor: pointer;
+          margin-right: 5px;
+        }
+        .col--aside img:hover {
+          background: #fff;
+          border-color: #999;
+        }
+    
+    #canvas {
+      background: #fff;
+    }
+
+    h3 {
+      font-weight: 800;
+      font-size: 48px;
+      linr-height: 1;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    h3 i {
+      font-size: 13px;
+      text-transform: lowercase;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 48px;
+    }
+  </style>
+  <script src="bower_components/fabric/dist/fabric.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="col col--main">
+      <canvas id="canvas" width="1207" height="800"></canvas>
+    </div>
+    <div class="col col--aside">
+      <h3>Glyphs <i>(click to add)</i></h3>
+      <div class="panel" id="glyph-panel"></div>
+    </div>
+  </div>
+
+  <script>
+    var canvas = new fabric.Canvas('canvas');
+    canvas.getContext('2d').globalCompositeOperation = "multiply"; // blend mode set to multiply
+
+    var panel = document.getElementById('glyph-panel');
+
+    var addGlyphsToPanel = function() {
+      var colors = ['black', 'blue', 'brown', 'cream', 'gray', 'green', 'lime', 'magenta', 'mint', 'orange', 'peach', 'pink', 'purple', 'red', 'sky', 'yellow', 'tan', 'teal'];
+      var N = 11;
+      for(var i = 0, total = colors.length; i < total; i++) {
+        addGlyphToPanel(colors[i], N);
+      }
+    }
+
+    var addGlyphToPanel = function(color, total) {
+      for(var i = 1; i <= total; i++) {
+        var img = document.createElement('img');
+        img.src = "pngs/glyph-" + i + "-" + color + ".png";
+        img.setAttribute('width', '32px');
+        img.setAttribute('onclick', 'insertGlyph(this)');
+        panel.appendChild(img);
+      }
+    }
+
+    var insertGlyph = function(glyphElement) {
+      var imageInstance = new fabric.Image(glyphElement, {
+        left: 10,
+        top: 10
+      });
+      imageInstance.scale(8);
+      canvas.add(imageInstance);
+    }
+
+    addGlyphsToPanel();
+  </script>
+
+</body>
+</html>
