@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TW Glyphs</title>
+  <script src="snap.svg-min.js"></script>
+  <style>
+    image {
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <svg id="svg"></svg>
+  <script>
+    var s = Snap('#svg');
+    var colors = ['black', 'blue', 'brown', 'cream', 'gray', 'green', 'lime', 'magenta', 'mint', 'orange', 'peach', 'pink', 'purple', 'red', 'sky', 'yellow', 'tan', 'teal'];
+
+    var loadGlyphs = function(color, y) {
+      for(var i = 1, total = 11; i <= total; i++) {
+        var x = 100 * (i-1);
+        s.image('pngs/glyph-' + i + '-' + color + '.png', x, y, 100, 100).drag();
+      }
+    }
+
+    for(var i = 0, total = colors.length; i < total; i++ ) {
+      loadGlyphs(colors[i], i*10+20);
+    }
+  </script>
+</body>
+</html>
