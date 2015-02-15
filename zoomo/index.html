@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>zoomo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing">
+  <div>
+    <div class="overlay">
+      <video loop autoplay preload class="hero"><source src="//s3-ap-southeast-1.amazonaws.com/car-classifieds/vid-full.mp4" type="video/mp4"></video>
+    </div>
+
+    <div class="logo tac">
+      <img class="logo__img" src="logo-zoomo-white.svg" alt="">
+    </div>
+    <a href="javascript:$.fn.fullpage.moveSectionDown();" class="arrow bounce"></a>
+
+    <div class="slides" id="fullpage">
+      <div class="section section--hero">
+        <div class="container tac">
+          <h2 class="heading">Used car buying <em>simplified</em>
+          </h2>
+          <h3>No brokerage &bull; Only individual sellers</h3>
+
+          <div class="search search-area-box">
+            <div class="search__model col-inline">
+              <input type="text" class="search-input" placeholder="Car model, name etc.">
+            </div>
+            <div class="search__budget search-el col-inline">
+              <select class="search-select" ng-model="filter.budget.high">
+                <option value="20">Max Budget</option>
+                <option value="{{budgetMax}}">{{budgetMax}} Lakhs</option>
+              </select>
+            </div>
+            <div class="search__age search-el col-inline">
+              <select class="search-select" ng-model="filter.year">
+                <option value="2004" ng-selected="filter.year == 2004">Max Age</option>
+                <option value="{{year}}" ng-repeat="year in yearVals"
+                ng-selected="filter.year == year">Up to {{year}}</option>
+              </select>
+            </div>
+            <button class="search-btn" ng-click="done()">Show me cars</button>
+          </div>
+
+        </div>
+        <div class="ab">
+          <div class="container tac">
+            <!-- <div class="stats">
+              <div class="stat">
+                <div class="stat__number">1800+</div>
+                <div class="stat__description">Verified cars</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">1200+</div>
+                <div class="stat__description">active subscribers</div>
+              </div>
+              <div class="stat">
+                <div class="stat__number">100+</div>
+                <div class="stat__description">delighted buyers</div>
+              </div>
+            </div> -->
+            <h3>200 inspected cars added today &bull; 3000 live listings</h3>
+          </div>
+          <a class="bar tac" href="javascript:$.fn.fullpage.moveSectionDown();">See cars added today</a>
+        </div>
+      </div>
+      <div class="section section--a">
+        <div class="container tac">
+          <div style="margin-top: 120px;">
+            <img src="listing.jpg" style="width: 960px;">
+          </div>
+        </div>
+        <div class="ab">
+          <a class="bar tac" href="javascript:$.fn.fullpage.moveSectionDown();">Why zoomo?</a>
+        </div>
+      </div>
+      <div class="section section--b">
+        <div class="container">
+          <h1 class="heading">Inspection Report</h1>
+          <ul class="feature-list">
+            <li>know everything about</li>
+            <li>the car instantly</li>
+          </ul>
+          <a href="#" class="btn btn-raised">See sample inspection report</a>
+          <div class="testimonial testimonial--2 animated tar">
+            <div class="quote">
+              <p>Thanks Zoomo! You made it ridiculously simple :)</p>
+            </div>
+            <div class="user">
+              <p><b>Imtiaz Ahmed</b><br> Senior Chief Engineer, Samsung Electronics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section--c">
+        <div class="container tar">
+          <h1 class="heading"><em>Personalised</em> help <br>every step of the way</h1>
+          <ul class="feature-list">
+            <li>personalized recommendations for you</li>
+            <li>chat with an expert now</li>
+          </ul>
+          <a href="javascript:$zopim.livechat.window.show()" class="btn btn-raised">Start Chat</a>
+          <div class="testimonial testimonial--3 animated tal">
+            <div class="quote">
+              <p>Zoomo seemed to be THE BEST choice I made!</p>
+            </div>
+            <div class="user">
+              <p><b>Avinash</b><br> Scientist, ISRO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section--d section--hero">
+        <div class="container tac">
+          <h1 class="heading">Your personal used car <em>expert</em></h1>
+          <div class="search search-area-box">
+            <div class="search__model col-inline">
+              <ui-select multiple ng-model="filter.modelsObj" theme="select2"
+              close-on-select="false" on-select="$select.search = ''" class="">
+              <ui-select-match placeholder="Car model, name etc.">{{$item.model}}</ui-select-match>
+              <ui-select-choices class="search-list-container"
+              repeat="car in cars | propsFilter: {make: $select.search, model: $select.search}">
+              <div ng-bind-html="car.make + ' ' + car.model"></div>
+            </ui-select-choices>
+          </ui-select>
+        </div>
+        <div class="search__budget search-el col-inline">
+          <select class="search-select" ng-model="filter.budget.high">
+            <option value="20" ng-selected="filter.budget.high == 20">Max Budget</option>
+            <option value="{{budgetMax}}" ng-repeat="budgetMax in budgetVals"
+            ng-selected="filter.budget.high == budgetMax"
+            ng-show="budgetMax > filter.budget.low">{{budgetMax}} Lakhs</option>
+          </select>
+        </div>
+        <div class="search__age search-el col-inline">
+          <select class="search-select" ng-model="filter.year">
+            <option value="2004" ng-selected="filter.year == 2004">Max Age</option>
+            <option value="{{year}}" ng-repeat="year in yearVals"
+            ng-selected="filter.year == year">Up to {{year}}</option>
+          </select>
+        </div>
+        <button class="search-btn" ng-click="done()">Show me cars</button>
+      </div>
+    </div>
+    <div class="ab">
+      <h2 class="hd-2 tac">as seen on</h2>
+      <div class="featured-on-wrapper">
+        <div class="container tac">
+          <ul class="inline-list">
+            <li><a href="#" class="featured-on"><img src="img/et.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/medianama.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/inc42.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/nextbigwhat.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/vccircle.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/iamwire.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="img/dealcurry.png" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="//use.typekit.net/tnh1mql.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/fullpage/vendors/jquery.easings.min.js"></script>
+<script src="bower_components/fullpage/vendors/jquery.slimscroll.min.js"></script>
+<script src="bower_components/fullpage/jquery.fullPage.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#fullpage').fullpage({
+    afterLoad: function (link, index) {
+      if (index === 2) {
+        $('.testimonial--1').addClass('fadeInLeft').show();
+      }
+      if (index === 3) {
+        $('.testimonial--2').addClass('fadeInRight').show();
+      }
+      if (index === 4) {
+        $('.testimonial--3').addClass('fadeInLeft').show();
+      }
+      if (index === 1 || index === 5) {
+        $('.logo__img').removeClass('logo__img--shrink');
+      }
+    },
+    onLeave: function (index, nextIndex, direction) {
+      if ((index === 1 && direction === 'down') || (index === 5 && direction === 'up')) {
+        $('.logo__img').addClass('logo__img--shrink');
+        $('.arrow').fadeIn('2100');
+      }
+      if (nextIndex === 5) {
+        $('.arrow').fadeOut('2100');
+      }
+    }
+  });
+  // search
+  $('.search').on('focus', '.search-input,.search-el', function () {
+    $('.section--hero').addClass('section--blur');
+  });
+  $('.search').on('blur', '.search-input,.search-el', function () {
+    $('.section--hero').removeClass('section--blur');
+  });
+});
+</script>
+</body>
+</html>
