@@ -6,10 +6,16 @@ window.Framer.Defaults.DeviceView = {
 };
 window.Framer.Device = new Framer.DeviceView();
 Framer.Device.setupContext();
-// Welcome to Framer
 
-// This is just demo code. Feel free to delete it all.
 
+
+
+
+
+
+// Please don't judge. Coded in a hurry ;)
+
+// Layers
 var page1 = new Layer({
   x: 0,
   y: 0,
@@ -17,6 +23,7 @@ var page1 = new Layer({
   height: 1048,
   image: 'images/content-1.jpg'
 });
+
 var page2 = new Layer({
   x: 0,
   y: 0,
@@ -26,7 +33,24 @@ var page2 = new Layer({
   originX: 1,
   rotationY: 90
 });
-page2.states.animationOptions = {curve: "spring(600,30,0)"}
+
+var menu1 = new Layer({
+  x: 0,
+  y: 1048,
+  width: 640,
+  height: 88,
+  image: 'images/menu-1.jpg'
+});
+
+var menu2 = new Layer({
+  x: 0,
+  y: 1140,
+  width: 640,
+  height: 88,
+  image: 'images/menu-2.jpg'
+});
+
+// States
 page2.states.add({
   show: {
     rotationY: 0
@@ -36,21 +60,6 @@ page2.states.add({
   }
 });
 
-var menu1 = new Layer({
-  x: 0,
-  y: 1048,
-  width: 640,
-  height: 88,
-  image: 'images/menu-1.jpg'
-});
-var menu2 = new Layer({
-  x: 0,
-  y: 1140,
-  width: 640,
-  height: 88,
-  image: 'images/menu-2.jpg'
-});
-menu2.states.animationOptions = {curve: "spring(1000,10,0)"}
 menu2.states.add({
   show: {
     y: 1048
@@ -60,10 +69,17 @@ menu2.states.add({
   }
 });
 
+// Animation options
+page2.states.animationOptions = {curve: "spring(600,30,0)"}
+menu2.states.animationOptions = {curve: "spring(1000,10,0)"}
+
+//Events
+
 menu1.on(Events.Click, function() {
   page2.states.switch('show');
   menu2.states.switch('show');
 });
+
 menu2.on(Events.Click, function() {
   page2.states.switch('hide');
   menu2.states.switch('hide');
