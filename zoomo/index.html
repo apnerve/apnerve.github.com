@@ -77,7 +77,7 @@
       </div>
       <div class="section section--b">
         <div class="container">
-          <h1 class="heading">Inspection Report</h1>
+          <h1 class="heading"><em>Inspection Report</em></h1>
           <ul class="feature-list">
             <li>know everything about</li>
             <li>the car instantly</li>
@@ -98,9 +98,8 @@
           <h1 class="heading"><em>Personalised</em> help <br>every step of the way</h1>
           <ul class="feature-list">
             <li>personalized recommendations for you</li>
-            <li>chat with an expert now</li>
+            <li>Call our expert now: 09920237104</li>
           </ul>
-          <a href="javascript:$zopim.livechat.window.show()" class="btn btn-raised">Start Chat</a>
           <div class="testimonial testimonial--3 animated tal">
             <div class="quote">
               <p>Zoomo seemed to be THE BEST choice I made!</p>
@@ -116,45 +115,36 @@
           <h1 class="heading">Your personal used car <em>expert</em></h1>
           <div class="search search-area-box">
             <div class="search__model col-inline">
-              <ui-select multiple ng-model="filter.modelsObj" theme="select2"
-              close-on-select="false" on-select="$select.search = ''" class="">
-              <ui-select-match placeholder="Car model, name etc.">{{$item.model}}</ui-select-match>
-              <ui-select-choices class="search-list-container"
-              repeat="car in cars | propsFilter: {make: $select.search, model: $select.search}">
-              <div ng-bind-html="car.make + ' ' + car.model"></div>
-            </ui-select-choices>
-          </ui-select>
-        </div>
-        <div class="search__budget search-el col-inline">
-          <select class="search-select" ng-model="filter.budget.high">
-            <option value="20" ng-selected="filter.budget.high == 20">Max Budget</option>
-            <option value="{{budgetMax}}" ng-repeat="budgetMax in budgetVals"
-            ng-selected="filter.budget.high == budgetMax"
-            ng-show="budgetMax > filter.budget.low">{{budgetMax}} Lakhs</option>
-          </select>
-        </div>
-        <div class="search__age search-el col-inline">
-          <select class="search-select" ng-model="filter.year">
-            <option value="2004" ng-selected="filter.year == 2004">Max Age</option>
-            <option value="{{year}}" ng-repeat="year in yearVals"
-            ng-selected="filter.year == year">Up to {{year}}</option>
-          </select>
-        </div>
-        <button class="search-btn" ng-click="done()">Show me cars</button>
-      </div>
+              <input type="text" class="search-input" placeholder="Car model, name etc.">
+            </div>
+            <div class="search__budget search-el col-inline">
+              <select class="search-select" ng-model="filter.budget.high">
+                <option value="20">Max Budget</option>
+                <option value="{{budgetMax}}">{{budgetMax}} Lakhs</option>
+              </select>
+            </div>
+            <div class="search__age search-el col-inline">
+              <select class="search-select" ng-model="filter.year">
+                <option value="2004" ng-selected="filter.year == 2004">Max Age</option>
+                <option value="{{year}}" ng-repeat="year in yearVals"
+                ng-selected="filter.year == year">Up to {{year}}</option>
+              </select>
+            </div>
+            <button class="search-btn" ng-click="done()">Show me cars</button>
+          </div>
     </div>
     <div class="ab">
       <h2 class="hd-2 tac">as seen on</h2>
       <div class="featured-on-wrapper">
         <div class="container tac">
           <ul class="inline-list">
-            <li><a href="#" class="featured-on"><img src="img/et.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/medianama.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/inc42.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/nextbigwhat.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/vccircle.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/iamwire.png" alt=""></a></li>
-            <li><a href="#" class="featured-on"><img src="img/dealcurry.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="et.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="medianama.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="inc42.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="nextbigwhat.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="vccircle.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="iamwire.png" alt=""></a></li>
+            <li><a href="#" class="featured-on"><img src="dealcurry.png" alt=""></a></li>
           </ul>
         </div>
       </div>

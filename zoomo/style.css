@@ -301,6 +301,10 @@ input, select, textarea {
     color: #fff;
     font-style: normal;
 }
+h3 {
+    font-size: 24px;
+    font-weight: normal;
+}
 .rotate {
     font-weight: 900;
     color: #fff;
@@ -595,16 +599,16 @@ input, select, textarea {
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-16px);
+        transform: translateY(-10px);
     }
     60% {
-        transform: translateY(-10px);
+        transform: translateY(-6px);
     }
 }
 .arrow {
     /*display: none;*/
     position: fixed;
-    bottom: 6px;
+    bottom: 2px;
     left: 50%;
     margin-left: -12px;
     width: 24px;
