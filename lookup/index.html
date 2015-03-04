@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Just for fun ;) -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Look Up</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      background: #333;
+      color: #fff;
+      font-family: "Source Sans Pro",sans-serif;
+    }
+    .container {
+      width: 720px;
+      margin: auto;
+    }
+    #mantra .inputs {
+      border-bottom: 1px solid #eee;
+      padding: 24px 0;
+      text-align: center;
+    }
+    #mantra input {
+      padding: 10px;
+      font-size: 24px;
+      border: none;
+    }
+    #mantra p {
+      text-indent: 1.6em;
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: 200;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="mantra">
+
+      <div class="inputs">
+        <input type="text" v-model="name" />
+        <input type="text" v-model="work" />
+      </div>
+
+      <p>{{ name }} is here to help the world live better. We are on a journey to simplify everything to do with {{ work }} , which leaves you free to focus on your life, your loved ones, the things that matter most. We are challenge takers, solution makers, here to deliver to you a world filled to the brim with optimism, innovation, transparency, and progress. Here to create change for good, to help you live 10X better.</p>
+
+      <p>Our ambition to revolutionise {{ work }} is driven by our 10x Mantra. We out see, out think and out do the competition, so you can look up to a better life. A life where how you live is as important as what you live for. Look Up.</p>
+    </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#mantra',
+      data: {
+        name: 'Housing',
+        work: 'Real estate'
+      }
+    });
+  </script>
+</body>
+</html>
