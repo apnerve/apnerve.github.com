@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gozoomo</title>
+  <style>
+  body {
+    font-family: "proxima-nova",sans-serif;
+    background: #e0e0e0;
+    font-weight: 300;
+  }
+  .container {
+    margin-left: 330px;
+    margin-top: 160px;
+  }
+  .card {
+    width: 260px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 24px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px #ccc;
+  }
+  .card:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 1px #ddd;
+    z-index: 999;
+  }
+  .card__lens {
+    border: 1px dotted #e6e6e6;
+    border-width: 1px 0;
+  }
+
+  .card h1 {
+    color: #888;
+    font-weight: 100;
+    font-size: 20px;
+    margin: 0;
+  }
+  .card h1 b {
+    color: #000;
+    font-weight: 300;
+  }
+  .card p {
+    color: #666;
+  }
+
+  .year {
+    font-size: 12px;
+  }
+  .price {
+    margin: 16px 0;
+    font-size: 30px; 
+    font-weight: 300;
+  }
+  .location {
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .img-wrap {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-in;
+  }
+  .img-wrap:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0px, rgb(255, 255, 255) 100%);
+    height: 50%;
+  }
+
+  .card:hover .img-wrap {
+    height: auto;
+  }
+  .card:hover .img-wrap:after {
+    display: none;
+  }
+
+  .img-splash {
+    max-width: 100%;
+  }
+
+  .header-wrap {
+    min-height: 48px;
+  }
+
+  .row:after {
+    content: "";
+    clear: both;
+    display: block;
+  }
+  .col {
+    float: left;
+  }
+  .col-a {}
+  .col-b { 
+    /*visibility: hidden;*/
+    float: right;
+  }
+  .card:hover .col-b {
+    /*visibility: visible;*/
+  }
+
+  .light {
+    color: #888;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    background: none;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+  .card:hover .btn {
+    background-color: #c30;
+  }
+
+  .tac {
+    text-align: center;
+  }
+
+  .icon {
+    width: 16px;
+  }
+
+  .icon-map-pin {
+    width: 0.75em;
+    height: 0.75em;
+  }
+  .icon-heart {
+    width: 2em;
+    height: 2em;
+    visibility: hidden;
+  }
+  .card:hover .icon-heart {
+    visibility: visible;
+  }
+  </style>
+</head>
+<body>
+
+  <svg display="none" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-map-pin" viewBox="0 0 768 1024">
+        <title>map-pin</title>
+        <path class="path1" d="M384 0c-211.744 0-384 172.608-384 384.704 0 317.664 358.432 622.688 373.696 635.52 2.976 2.528 6.656 3.776 10.304 3.776 3.616 0 7.232-1.216 10.176-3.648 15.264-12.608 373.824-312.384 373.824-635.648 0-212.096-172.256-384.704-384-384.704zM384.064 986.816c-58.912-52.64-352.064-328.288-352.064-602.112 0-194.496 157.92-352.704 352-352.704s352 158.208 352 352.704c0 278.464-292.864 550.176-351.936 602.112zM384 192c-105.888 0-192 86.112-192 192s86.112 192 192 192 192-86.112 192-192-86.112-192-192-192zM384 544c-88.224 0-160-71.776-160-160s71.776-160 160-160 160 71.776 160 160-71.776 160-160 160z"></path>
+      </symbol>
+      <symbol id="icon-heart" viewBox="0 0 1184 1024">
+        <title>heart</title>
+        <path class="path1" d="M864 0c-79.232 0-155.392 29.472-214.528 83.040-22.464 20.32-41.696 43.424-57.472 68.928-15.776-25.504-35.008-48.608-57.472-68.96-59.136-53.536-135.296-83.008-214.528-83.008-176.448 0-320 143.552-320 320 0 119.104 37.056 213.12 123.872 314.4 126.144 147.2 445.408 371.84 458.944 381.344 2.752 1.952 5.984 2.912 9.184 2.912s6.432-0.96 9.184-2.912c13.536-9.504 332.8-234.144 458.976-381.344 86.784-101.28 123.84-195.296 123.84-314.4 0-176.448-143.552-320-320-320zM1035.872 613.6c-111.84 130.432-389.76 330.912-443.872 369.44-54.112-38.528-332.032-239.008-443.84-369.44-81.44-95.008-116.16-182.816-116.16-293.6 0-158.816 129.216-288 288-288 71.264 0 139.84 26.528 193.024 74.72 26.816 24.32 48.576 52.992 64.64 85.248 5.44 10.88 23.232 10.88 28.672 0 16.064-32.256 37.824-60.928 64.64-85.216 53.184-48.224 121.76-74.752 193.024-74.752 158.784 0 288 129.184 288 288 0 110.784-34.72 198.592-116.128 293.6z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="container">
+    <div class="list" id="cars">
+      <div class="card" v-repeat="cars">
+        <div class="card__context">
+          <div class="header-wrap">
+            <h1 class="col col-a"><b>{{ year }} {{ make }} {{ model }}</b> {{ version }} <img src="https://m.ak.fbcdn.net/dragon.ak/hphotos-ak-xpa1/t39.2365-6/851569_1408541616077952_839758311_n.jpg"></h1>
+          </div>
+          <p>{{ price }}</p>
+        </div>
+        <div class="card__lens tac">
+          <h2 class="price">Rs. {{ car_listed_price }}</h2>
+          <div class="img-wrap">
+            <img class="img-splash" src="{{ images[0] }}" alt="">
+          </div>
+          <p>
+            {{ fuel_type | lowercase }} &bullet; {{ mileage }} km &bullet; 1<sup>st</sup> Owner
+          </p>
+        </div>
+        <div class="card__trigger">
+          <div style="padding: 10px 0 0;">
+            <div class="row">
+              <div class="col">
+                <span>{{ seller_name }}</span> <br>
+                <span class="light">{{ seller_occupation }}</span>
+              </div>
+              <div class="col col-b"><svg class="icon icon-heart"><use xlink:href="#icon-heart"></use></svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/vue/dist/vue.min.js"></script>
+  <script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+  <script src="bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="app.js"></script>
+  <script src="//use.typekit.net/tnh1mql.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+</body>
+</html>
