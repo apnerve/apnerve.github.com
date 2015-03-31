@@ -17,22 +17,48 @@
       methods: {
         showDetails: function(car) {
           carVM.$data.detail = car;
-          var image  = $(car.$el).find('.img-splash');
+          window.image  = $(car.$el).find('.img-splash');
+          var adjustHeight = $(window).scrollTop();
           console.log(image.offset());
           $('body').addClass('overlay');
           details.css({
             'width' : image.width(),
             'height' : image.height(),
             'left' : image.offset().left + 'px',
-            'top' : image.offset().top + 'px',
+            'top' : image.offset().top - adjustHeight + 'px',
             'overflow' :'hidden'
           }).animate({
             'width' : '900px',
             'height' :'2000px',
             'left' : ($(window).width() - 900)/2 + 'px',
             'top' : 0,
+            'overflow' : 'scroll',
+            'opacity' : 1
+          }, 400, function() {
+            details.find('.details-container').show();
+          });
+        },
+
+        hideDetails: function(car) {
+          $('body').removeClass('overlay');
+          var adjustHeight = $(window).scrollTop();
+          
+          details.css({
+            'width' : '900px',
+            'height' :'2000px',
+            'left' : ($(window).width() - 900)/2 + 'px',
+            'top' : 0,
             'overflow' : 'scroll'
+          }).animate({
+            'width' : image.width(),
+            'height' : image.height(),
+            'left' : image.offset().left + 'px',
+            'top' : image.offset().top - adjustHeight + 'px',
+            'overflow' :'hidden',
+            'opacity': 0
           }, 400);
+
+          details.find('.details-container').hide();
         }
       }
     });

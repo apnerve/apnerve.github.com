@@ -135,9 +135,10 @@
 
   #details {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    overflow: scroll;
     /*visibility: hidden;*/
 
 
@@ -200,8 +201,9 @@
 
     <div id="details">
       <div class="img-container">
-        <img class="img-splash" src="{{ detail.images[0] }}" alt="">
-      </div><div class="details-container">
+        <img v-on="click: hideDetails(this)" class="img-splash" src="{{ detail.images[0] }}" alt="">
+      </div>
+      <div class="details-container">
         <h1>{{ detail.make }} {{ detail.model }}</h1>
         <p>{{ detail.version }}</p>
       </div>
