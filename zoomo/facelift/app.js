@@ -18,14 +18,14 @@
         showDetails: function(car) {
           carVM.$data.detail = car;
           window.image  = $(car.$el).find('.img-splash');
-          var adjustHeight = $(window).scrollTop();
+          var adjustOffset = $(window).scrollTop();
           console.log(image.offset());
           $('body').addClass('overlay');
           details.css({
             'width' : image.width(),
             'height' : image.height(),
             'left' : image.offset().left + 'px',
-            'top' : image.offset().top - adjustHeight + 'px',
+            'top' : image.offset().top - adjustOffset + 'px',
             'overflow' :'hidden'
           }).animate({
             'width' : '900px',
@@ -41,7 +41,7 @@
 
         hideDetails: function(car) {
           $('body').removeClass('overlay');
-          var adjustHeight = $(window).scrollTop();
+          var adjustOffset = $(window).scrollTop();
           
           details.css({
             'width' : '900px',
@@ -53,7 +53,7 @@
             'width' : image.width(),
             'height' : image.height(),
             'left' : image.offset().left + 'px',
-            'top' : image.offset().top - adjustHeight + 'px',
+            'top' : image.offset().top - adjustOffset + 'px',
             'overflow' :'hidden',
             'opacity': 0
           }, 400);
