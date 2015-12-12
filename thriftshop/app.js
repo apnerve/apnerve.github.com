@@ -78,6 +78,7 @@ window.showAlbum = function(response) {
 };
 
 App.init();
+
 },{"jquery":2,"vue":3}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
