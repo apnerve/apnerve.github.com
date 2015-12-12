@@ -18,7 +18,7 @@ App.init = function() {
     } else {
       $('#btn').on('click', function() {
         var url = $('#album_url').val();
-        $('#shop-link').append('<a class="btn" target="_blank" href="' + window.location.host + '/#' + url.split('=')[1].split('.')[1] + '">Go to your ThriftShop</a>');
+        $('#shop-link').append('<a class="btn" target="_blank" href="' + window.location.origin + '/#' + url.split('=')[1].split('.')[1] + '">Go to your ThriftShop</a>');
       });
     }
 };
@@ -78,7 +78,6 @@ window.showAlbum = function(response) {
 };
 
 App.init();
-
 },{"jquery":2,"vue":3}],2:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v2.1.4
