@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thrift Shop</title>
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Lato:400,300' rel='stylesheet' type='text/css'>
+  <!-- <link rel="stylesheet" href="animate.min.css"> -->
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div id="store" class="hidden">
+      <div class="hd">
+        <div class="container">
+          <h1>{{ name }}</h1>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="container">
+          <h2>{{ album_name }}</h2>
+          <div class="card" v-for="photo in photos" style="background-image:url(http://graph.facebook.com/{{photo.id}}/picture/type=normal)" v-on:click="details" data-id="{{ $index }}">
+            <div class="price">₹ {{ photo.price }}</div>
+            <div class="action">Buy</div>
+          </div>
+        </div>
+      </div>
+      <div class="ft"></div>
+    </div>
+
+    <div class="modal hidden" id="details">
+      <button v-on:click="hide" class="close">X Close</button>
+        <div class="container">
+          <div class="modal-content">
+              <div class="media_obj">
+                <div class="m_i">
+                  <img v-bind:src="photo.picture" alt="">
+                </div>
+                <div class="m_c">
+                  <p>{{ photo.name }}</p>
+                  <p>₹ {{ photo.price }} <a target="_blank" href="https://test.instamojo.com/apnerve/{{ photo.id }}/" class="btn">Checkout</a></p>
+                </div>
+              </div>
+          </div>
+        </div>
+    <div class="loader">🎅 Loading the store &hellip;</div>
+  <script src="app.js"></script>
+</body>
+</html>
