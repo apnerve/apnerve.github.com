@@ -1,8 +1,0 @@
-FB.api(
-  '/473329992835808',
-  'GET',
-  {"fields":"description,name,photos{name,id},link"},
-  function(response) {
-      // Insert your code here
-  }
-);
