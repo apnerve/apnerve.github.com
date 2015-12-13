@@ -17,7 +17,7 @@ App.init = function() {
     } else {
       $('#btn').on('click', function() {
         var url = $('#album_url').val();
-        $('#shop-link').append('<a class="btn" target="_blank" href="' + window.location.origin + '/#' + url.split('=')[1].split('.')[1] + '">Go to your ThriftShop</a>');
+        $('#shop-link').append('<a class="btn" target="_blank" href="' + window.location.origin + '/thriftshop/#' + url.split('=')[1].split('.')[1] + '">Go to your ThriftShop</a>');
       });
     }
 };
