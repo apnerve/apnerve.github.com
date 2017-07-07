@@ -4,38 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <title>TW Glyphs</title>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,300' rel='stylesheet'>
   <style>
     body {
-      background: #000;
       font-family: "Open Sans", arial;
-      color: #333;
+      color: #454545;
       margin: 0;
     }
     .container {
-      background: #efefef;
+      background: #fff;
       overflow: hidden;
-    }
-    .col {
-      float: left;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
       .col--main {
-        width: 1207px;
-        border-right: 1px solid #dcdcdc;
-        margin-right: 24px;
+        float: left;
       }
       .col--aside {
         width: 429px;
+        height: 100%;
+        float: right;
+        background-color: #f4f4f4;
+        padding: 20px;
       }
         .col--aside img {
           width: 32px;
           border:1px solid #dcdcdc;
+          background-color: #fff;
           cursor: pointer;
           margin-right: 5px;
+          border-radius: 3px;
+          transition: all 200ms;
         }
         .col--aside img:hover {
           background: #fff;
           border-color: #999;
+          transform: scale(1.5);
         }
     
     #canvas {
@@ -45,14 +52,14 @@
     h3 {
       font-weight: 800;
       font-size: 48px;
-      linr-height: 1;
+      line-height: 1;
       text-transform: uppercase;
       margin: 0;
     }
     h3 i {
       font-size: 13px;
       text-transform: lowercase;
-      font-weight: normal;
+      font-weight: 300;
       font-style: normal;
       line-height: 48px;
     }
@@ -64,16 +71,20 @@
 <body>
 
   <div class="container">
-    <div class="col col--main">
-      <canvas id="canvas" width="1207" height="800"></canvas>
+    <div class="col--main">
+      <canvas id="canvas"></canvas>
     </div>
-    <div class="col col--aside">
+    <div class="col--aside">
       <h3>Glyphs <i>(click to add)</i></h3>
       <div class="panel" id="glyph-panel"></div>
+      <p>PS: This tool can be significantly improved using SVG. Send me the SVGs and I'll make this too better :) <br> - Praveen (apnerve@gmail.com)</p>
     </div>
   </div>
 
   <script>
+    var c = document.getElementById('canvas');
+    c.height = window.innerHeight;
+    c.width = window.innerWidth - 469;
     var canvas = new fabric.Canvas('canvas');
     canvas.getContext('2d').globalCompositeOperation = "multiply"; // blend mode set to multiply
 
