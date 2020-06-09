@@ -13,7 +13,7 @@
   "author": "praveen <apnerve@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^2.1.4",
+    "jquery": "^3.5.1",
     "vue": "^1.0.11"
   },
   "devDependencies": {
