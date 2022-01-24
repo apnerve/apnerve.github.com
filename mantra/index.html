@@ -74,7 +74,7 @@
       
       <div class="share">
         <p>Copy &amp; Share:</p>
-        <input v-size="link" class="share-text">{{ link }}</input>
+        <input v-bind:size="link.length" class="share-text" v-model="link" disabled />
       </div>
     </div>
 
