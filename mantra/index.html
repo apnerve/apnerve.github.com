@@ -73,7 +73,8 @@
       <p>Our ambition to revolutionise {{ domain }} is driven by our 10x Mantra. We out see, out think and out do the competition, so you can look up to a better life. A life where how you live is as important as what you live for. {{ tagline }}.</p>
       
       <div class="share">
-        Copy &amp; Share: <span class="share-text">http://labs.apnerve.com/mantra/?product={{ product }}&domain={{ domain }}&tagline={{ mantra }}</span>
+        <p>Copy &amp; Share:</p>
+        <input v-size="link" class="share-text">{{ link }}</input>
       </div>
     </div>
 
@@ -85,12 +86,14 @@
     var product = url.get('product') || "Housing"
     var domain = url.get('domain') || "Real Estate"
     var tagline = url.get('tagline') || "Look up"
+    var link = `https://labs.apnerve.com/mantra?product=${product}&domain=${domain}&tagline=${tagline}`
     new Vue({
       el: '#mantra',
       data: {
         product,
         domain,
-        tagline
+        tagline,
+        link
       }
     });
   })();
