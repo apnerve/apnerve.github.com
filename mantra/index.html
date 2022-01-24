@@ -52,6 +52,7 @@
     background-color: #555;
     text-decoration: none;
     transition: background-color 0.4s;
+    width: 100%;
   }
   .share-text:hover {
     background-color: #999;
@@ -74,7 +75,7 @@
       
       <div class="share">
         <p>Copy &amp; Share:</p>
-        <input :size="link.length" class="share-text" v-model="link" disabled />
+        <input class="share-text" value="https://labs.apnerve.com?product={{product}}&domain={{domain}}&tagline={{tagline}}" disabled />
       </div>
     </div>
 
@@ -86,14 +87,13 @@
     var product = url.get('product') || "Housing"
     var domain = url.get('domain') || "Real Estate"
     var tagline = url.get('tagline') || "Look up"
-    var link = encodeURI(`https://labs.apnerve.com/mantra?product=${product}&domain=${domain}&tagline=${tagline}`)
+    
     new Vue({
       el: '#mantra',
       data: {
         product,
         domain,
-        tagline,
-        link
+        tagline
       }
     });
   })();
