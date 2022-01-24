@@ -74,7 +74,7 @@
       
       <div class="share">
         <p>Copy &amp; Share:</p>
-        <input v-bind:size="link.length" class="share-text" v-model="link" disabled />
+        <input :size="link.length" class="share-text" v-model="link" disabled />
       </div>
     </div>
 
@@ -86,7 +86,7 @@
     var product = url.get('product') || "Housing"
     var domain = url.get('domain') || "Real Estate"
     var tagline = url.get('tagline') || "Look up"
-    var link = `https://labs.apnerve.com/mantra?product=${product}&domain=${domain}&tagline=${tagline}`
+    var link = encodeURI(`https://labs.apnerve.com/mantra?product=${product}&domain=${domain}&tagline=${tagline}`)
     new Vue({
       el: '#mantra',
       data: {
