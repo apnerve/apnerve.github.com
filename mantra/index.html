@@ -62,18 +62,18 @@
   <div id="mantra">
     <div class="inputs">
       <small>Change the values below</small>
-      <input type="text" v-model="name" />
-      <input type="text" v-model="work" />
-      <input type="text" v-model="mantra" />
+      <input type="text" v-model="product" placeholder="product or company name" />
+      <input type="text" v-model="domain" placeholder="domain or space" />
+      <input type="text" v-model="tagline" placeholder="Tagline" />
     </div>
     <div class="container">
 
-      <p>{{ name }} is here to help the world live better. We are on a journey to simplify everything to do with {{ work }} , which leaves you free to focus on your life, your loved ones, the things that matter most. We are challenge takers, solution makers, here to deliver to you a world filled to the brim with optimism, innovation, transparency, and progress. Here to create change for good, to help you live 10x better.</p>
+      <p>{{ product }} is here to help the world live better. We are on a journey to simplify everything to do with {{ domain }} , which leaves you free to focus on your life, your loved ones, the things that matter most. We are challenge takers, solution makers, here to deliver to you a world filled to the brim with optimism, innovation, transparency, and progress. Here to create change for good, to help you live 10x better.</p>
 
-      <p>Our ambition to revolutionise {{ work }} is driven by our 10x Mantra. We out see, out think and out do the competition, so you can look up to a better life. A life where how you live is as important as what you live for. {{ mantra }}.</p>
+      <p>Our ambition to revolutionise {{ domain }} is driven by our 10x Mantra. We out see, out think and out do the competition, so you can look up to a better life. A life where how you live is as important as what you live for. {{ tagline }}.</p>
       
       <div class="share">
-        Copy &amp; Share: <span class="share-text">http://labs.apnerve.com/mantra/#{{ name }}|{{ work }}|{{ mantra }}</span>
+        Copy &amp; Share: <span class="share-text">http://labs.apnerve.com/mantra/?product={{ product }}&domain={{ domain }}&tagline={{ mantra }}</span>
       </div>
     </div>
 
@@ -81,14 +81,16 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
   <script>
   (function() {
-    var hashes = window.location.hash;
-    var params = (hashes.replace('#','').split('|'));
+    var url = new URLSearchParams(window.location.search);
+    var product = url.get('product') || "Housing"
+    var domain = url.get('domain') || "Real Estate"
+    var tagline = url.get('tagline') || "Look up"
     new Vue({
       el: '#mantra',
       data: {
-        name: params[0] || 'Housing',
-        work: params[1] || 'real estate',
-        mantra: params[2] || 'Look Up'
+        product,
+        domain,
+        tagline
       }
     });
   })();
